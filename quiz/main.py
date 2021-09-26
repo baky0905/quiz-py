@@ -1,7 +1,9 @@
 from utils.csv_reader import read_csv
 from quiz.process_user_input import (
-    calculate_user_score_statistics,
-    score_user_input
+    calculate_user_score_statistics
+)
+from quiz.process_user_input import (
+    Scoring
 )
 
 
@@ -10,11 +12,12 @@ def main():
     """
     questions_and_answers = read_csv('quiz/data/questions_answers.csv')
 
+    scoring = Scoring()
+
     user_answers = []
     for quiz_item in questions_and_answers:
-        question = f"How much is {quiz_item['variable_a']} {quiz_item['operator']} {quiz_item['variable_b']}?"
-        print(question)
-        user_answers.append(score_user_input(quiz_item))
+        scoring.ask_question(quiz_item)
+        user_answers.append(scoring.score_user_input(quiz_item))
 
     user_statistics = calculate_user_score_statistics(user_answers)
 
