@@ -3,25 +3,25 @@ from quiz.process_user_input import (
     calculate_user_score_statistics
 )
 from quiz.process_user_input import (
-    Scoring
+    Feedback,
+    Scoring,
+    Statistics
 )
 
 
 def main():
     """[summary]
     """
-    questions_and_answers = read_csv('quiz/data/questions_answers.csv')
-
-    scoring = Scoring()
+    quiz = read_csv('quiz/data/questions_answers.csv')
 
     user_answers = []
-    for quiz_item in questions_and_answers:
-        scoring.ask_question(quiz_item)
-        user_answers.append(scoring.score_user_input(quiz_item))
+    for quiz_item in quiz:
+        Feedback.ask_question(quiz_item)
+        user_answers.append(Scoring.score_user_input(quiz_item))
 
     user_statistics = calculate_user_score_statistics(user_answers)
 
-    print(f"You have answered {user_statistics}% of questions correctly!")
+    Statistics.report_statistics(user_statistics)
 
 
 if __name__ == '__main__':
