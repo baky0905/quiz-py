@@ -80,7 +80,7 @@ class Statistics:
         return int(round(score_percent, 0))
 
     def report_statistics(user_statistics):
-        """[summary]
+        """Gives a message to the user about the score stats.
 
         Args:
             user_statistics ([type]): Percentage of succesfully

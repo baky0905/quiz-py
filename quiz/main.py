@@ -1,7 +1,5 @@
 from utils.csv_reader import read_csv
-from quiz.process_user_input import (
-    calculate_user_score_statistics
-)
+
 from quiz.process_user_input import (
     Feedback,
     Scoring,
