@@ -1,5 +1,5 @@
 from utils.csv_reader import read_csv
-
+import sys
 from quiz.process_user_input import (
     Feedback,
     Scoring,
@@ -7,10 +7,11 @@ from quiz.process_user_input import (
 )
 
 
-def main():
+def main(file_path):
     """[summary]
     """
-    quiz = read_csv('quiz/data/questions_answers.csv')
+    # 'quiz/data/questions_answers.csv'
+    quiz = read_csv(file_path)
 
     user_answers = []
     for quiz_item in quiz:
@@ -23,4 +24,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1])
