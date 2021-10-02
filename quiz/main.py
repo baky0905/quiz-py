@@ -17,7 +17,7 @@ def main():
         Feedback.ask_question(quiz_item)
         user_answers.append(Scoring.score_user_input(quiz_item))
 
-    user_statistics = calculate_user_score_statistics(user_answers)
+    user_statistics = Statistics.calculate_user_score_statistics(user_answers)
 
     Statistics.report_statistics(user_statistics)
 

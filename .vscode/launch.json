@@ -10,8 +10,8 @@
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}",
-      "env": { "PYTHONPATH": "." } //${workspaceRoot}
+      // "cwd": "${workspaceFolder}",
+      "env": { "PYTHONPATH": "${workspaceRoot}" } //
       //   "env": {
       //     "PYTHONPATH": "${PYTHONPATH}:/home/kbaka/projects/2021-09-26_mentoring_pythonetall/"
       //   }
