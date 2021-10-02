@@ -5,7 +5,7 @@ import pytest
 from quiz.utils.csv_reader import read_csv
 
 
-@pytest.mark.unittest
+# @pytest.mark.unittest
 def test_csv_reader_should_return_dictionary():
     # arrange
     expected = [
@@ -31,3 +31,15 @@ def test_csv_reader_should_return_dictionary():
 
     # assert
     assert actual == expected
+
+
+def test_csv_reader_should_not_return_empty_list():
+    # arrange
+    expected = []
+
+    # act
+
+    actual = read_csv("quiz/data/questions_answers.csv")[0:2]
+
+    # assert
+    assert actual != expected
