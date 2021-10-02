@@ -1,3 +1,4 @@
+# Python standard library imports
 import csv
 from typing import Dict
 
@@ -16,9 +17,9 @@ def read_csv(file_path: str) -> Dict:
             reader = csv.DictReader(csvfile)
             csv_dict_list = []
             for row in reader:
-                csv_dict_list.append(
-                    {key: value for key, value in row.items()})
+                csv_dict_list.append({key: value for key, value in row.items()})
             return csv_dict_list
     except FileNotFoundError as err:
         print(
-            f"{err}, please provide a corect path to the file with questions and answers!")
+            f"{err}, please provide a corect path to the file with questions and answers!"
+        )

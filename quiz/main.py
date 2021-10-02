@@ -1,5 +1,8 @@
-from utils.csv_reader import read_csv
+# Python standard library imports
 import sys
+
+# Local imports
+from utils.csv_reader import read_csv
 from quiz.process_user_input import Feedback, Scoring, Statistics
 
 
